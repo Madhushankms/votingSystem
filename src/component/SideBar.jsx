@@ -22,7 +22,6 @@ export default function SideBar() {
       <CssBaseline />
       <Drawer
         variant="permanent"
-        position="fixed"
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -33,6 +32,7 @@ export default function SideBar() {
             pt: 2,
             boxShadow: 2,
             height: "100vh",
+            position: "fixed",
           },
         }}
       >
