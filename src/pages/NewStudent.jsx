@@ -154,6 +154,22 @@ function NewStudent() {
                 <Grid item sm={3}>
                   <TextField
                     fullWidth
+                    id="bod"
+                    name="bod"
+                    label="Email"
+                    size="small"
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    error={formik.touched.email && Boolean(formik.errors.email)}
+                    helperText={formik.touched.email && formik.errors.email}
+                  />
+                </Grid>
+              </Grid>
+              <Grid container spacing={2} mt={0}>
+                <Grid item sm={3}>
+                  <TextField
+                    fullWidth
                     id="contact"
                     name="contact"
                     label="Contact number"
@@ -239,7 +255,7 @@ function NewStudent() {
                   />
                 </Grid>
               </Grid>
-              <Grid container spacing={2} mt={0}>
+              {/* <Grid container spacing={2} mt={0}>
                 <Grid item size={4}>
                   <Button color="primary" variant="contained" type="submit">
                     Clear
@@ -250,7 +266,7 @@ function NewStudent() {
                     Submit
                   </Button>
                 </Grid>
-              </Grid>
+              </Grid> */}
             </form>
           </Box>
         </Box>
