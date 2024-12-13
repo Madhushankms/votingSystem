@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import logo from "../Img/br.png";
-import profile from "../Img/thilanka.jpg";
+import logo from "../Img/logo.png";
+import profile from "../Img/sachini.jpg";
 import Avatar from "@mui/material/Avatar";
 
 function NavBar() {
@@ -22,7 +22,7 @@ function NavBar() {
           <img src={logo} width={140}></img>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Typography sx={{ color: "Black" }}>
-              Mr : Jayasinghe O.T.R
+              Miss : Sachini Gemba
             </Typography>
             <Avatar
               alt="Cindy Baker"

@@ -6,6 +6,9 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
+import ViewListIcon from "@mui/icons-material/ViewList";
+import FormatListNumberedIcon from "@mui/icons-material/FormatListNumbered";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -15,8 +18,10 @@ import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import { useNavigate } from "react-router-dom";
 const drawerWidth = 240;
 export default function SideBar() {
+  const navigate = useNavigate();
   return (
     <>
       <CssBaseline />
@@ -62,26 +67,29 @@ export default function SideBar() {
                 <Divider />
                 <ListItem disablePadding>
                   <ListItemButton
-                    sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
-                  >
-                    <ListItemIcon>
-                      <PersonAddAlt1Icon />
-                    </ListItemIcon>
-                    New Student
-                    <ListItemText />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton
+                    onClick={() => navigate("/NewMatch")}
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
                   >
                     <ListItemIcon>
                       <AddCircleIcon />
                     </ListItemIcon>
-                    New Match
+                    New Party
                     <ListItemText />
                   </ListItemButton>
                 </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton
+                    onClick={() => navigate("/newstudent")}
+                    sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                  >
+                    <ListItemIcon>
+                      <PersonAddAlt1Icon />
+                    </ListItemIcon>
+                    New Candidate
+                    <ListItemText />
+                  </ListItemButton>
+                </ListItem>
+
                 <ListItem disablePadding>
                   <ListItemButton
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
@@ -99,9 +107,9 @@ export default function SideBar() {
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
                   >
                     <ListItemIcon>
-                      <PersonAddAlt1Icon />
+                      <ViewListIcon />
                     </ListItemIcon>
-                    Student List
+                    Party List
                     <ListItemText />
                   </ListItemButton>
                 </ListItem>
@@ -110,18 +118,19 @@ export default function SideBar() {
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
                   >
                     <ListItemIcon>
-                      <AddCircleIcon />
+                      <FormatListNumberedIcon />
                     </ListItemIcon>
-                    Match
+                    Candidate List
                     <ListItemText />
                   </ListItemButton>
                 </ListItem>
+
                 <ListItem disablePadding>
                   <ListItemButton
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
                   >
                     <ListItemIcon>
-                      <AdminPanelSettingsIcon />
+                      <SupervisorAccountIcon />
                     </ListItemIcon>
                     Administrators
                     <ListItemText />
