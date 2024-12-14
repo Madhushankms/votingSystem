@@ -81,6 +81,7 @@ function NewStudent() {
             p: 5,
             pl: 8,
             backgroundColor: "#e7e5e4",
+            height: "100vh",
             width: "100%",
             "&::before": {
               content: '""',
@@ -91,7 +92,7 @@ function NewStudent() {
               bottom: 0,
               backgroundImage: `url(${BImage})`,
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "top",
               backgroundRepeat: "no-repeat",
               opacity: 0.09,
               zIndex: 1,
@@ -124,13 +125,13 @@ function NewStudent() {
                     </Typography>
                     <Divider sx={{ width: "20%", borderBottomWidth: 2 }} />
                     <Grid container spacing={2} mt={1}>
-                      <Grid item sm={6}>
+                      <Grid item sm={12}>
                         <TextField
                           fullWidth
                           id="fname"
                           sx={{ zIndex: 1 }}
                           name="fname"
-                          label="First Name"
+                          label="Full Name"
                           size="small"
                           value={formik.values.fname}
                           onChange={formik.handleChange}
@@ -149,7 +150,7 @@ function NewStudent() {
                           id="lname"
                           name="lname"
                           sx={{ zIndex: 1 }}
-                          label="Last Name"
+                          label="Name With Initials"
                           size="small"
                           value={formik.values.lname}
                           onChange={formik.handleChange}
@@ -170,9 +171,27 @@ function NewStudent() {
                           id="add"
                           sx={{ zIndex: 1 }}
                           name="add"
-                          label="Address"
+                          label="NIC"
                           size="small"
-                          placeholder="123/B, Uswewa, Abilipitiya."
+                          //placeholder="123/B, Uswewa, Abilipitiya."
+                          value={formik.values.add}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={
+                            formik.touched.add && Boolean(formik.errors.add)
+                          }
+                          helperText={formik.touched.add && formik.errors.add}
+                        />
+                      </Grid>
+                      <Grid item sm={3}>
+                        <TextField
+                          fullWidth
+                          id="add"
+                          sx={{ zIndex: 1 }}
+                          name="add"
+                          label="Photo"
+                          size="small"
+                          //placeholder="123/B, Uswewa, Abilipitiya."
                           value={formik.values.add}
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
@@ -190,7 +209,7 @@ function NewStudent() {
                           id="bod"
                           name="bod"
                           sx={{ zIndex: 1 }}
-                          label="BirthDay"
+                          label="Select Your Party"
                           size="small"
                           value={formik.values.bod}
                           onChange={formik.handleChange}
@@ -203,7 +222,7 @@ function NewStudent() {
                       </Grid>
                     </Grid>
                     <Grid container spacing={2} mt={0}>
-                      <Grid item sm={6}>
+                      {/* <Grid item sm={6}>
                         <TextField
                           fullWidth
                           id="email"
@@ -221,49 +240,7 @@ function NewStudent() {
                             formik.touched.email && formik.errors.email
                           }
                         />
-                      </Grid>
-                    </Grid>
-                    <Grid container spacing={2} mt={0}>
-                      <Grid item sm={6}>
-                        <TextField
-                          fullWidth
-                          id="contact"
-                          name="contact"
-                          sx={{ zIndex: 1 }}
-                          label="Contact number"
-                          size="small"
-                          value={formik.values.contact}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={
-                            formik.touched.contact &&
-                            Boolean(formik.errors.contact)
-                          }
-                          helperText={
-                            formik.touched.contact && formik.errors.contact
-                          }
-                        />
-                      </Grid>
-                      <Grid item sm={6}>
-                        <TextField
-                          fullWidth
-                          id="whatap"
-                          name="whatap"
-                          label="Whatsapp number"
-                          size="small"
-                          value={formik.values.whatap}
-                          onChange={formik.handleChange}
-                          sx={{ zIndex: 1 }}
-                          onBlur={formik.handleBlur}
-                          error={
-                            formik.touched.whatap &&
-                            Boolean(formik.errors.whatap)
-                          }
-                          helperText={
-                            formik.touched.whatap && formik.errors.whatap
-                          }
-                        />
-                      </Grid>
+                      </Grid> */}
                     </Grid>
                   </Box>
 
@@ -282,7 +259,7 @@ function NewStudent() {
                         mt={4}
                         sx={{ display: "block" }}
                       >
-                        Emergency Contact Details
+                        Contact Details
                       </Typography>
                       <Divider sx={{ width: "20%", borderBottomWidth: 2 }} />
                       <Grid container spacing={2} mt={1}>
@@ -292,7 +269,7 @@ function NewStudent() {
                             id="ename"
                             name="ename"
                             sx={{ zIndex: 1 }}
-                            label="Name"
+                            label="Telephone number"
                             size="small"
                             value={formik.values.ename}
                             onChange={formik.handleChange}
@@ -306,12 +283,12 @@ function NewStudent() {
                             }
                           />
                         </Grid>
-                        <Grid item sm={4}>
+                        <Grid item sm={6}>
                           <TextField
                             fullWidth
                             id="relation"
                             name="relation"
-                            label="Relationship"
+                            label="Email"
                             size="small"
                             value={formik.values.relation}
                             onChange={formik.handleChange}
@@ -328,13 +305,13 @@ function NewStudent() {
                         </Grid>
                       </Grid>
                       <Grid container spacing={2} mt={0}>
-                        <Grid item sm={6}>
+                        <Grid item sm={12}>
                           <TextField
                             fullWidth
                             id="enumber"
                             name="enumber"
                             sx={{ zIndex: 1 }}
-                            label="Contact Number"
+                            label="Address"
                             size="small"
                             value={formik.values.enumber}
                             onChange={formik.handleChange}

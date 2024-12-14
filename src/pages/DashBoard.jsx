@@ -31,7 +31,7 @@ function DashBoard() {
               bottom: 0,
               backgroundImage: `url(${BImage})`,
               backgroundSize: "cover",
-              backgroundPosition: "top",
+              backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               opacity: 0.09,
               zIndex: 1,
@@ -45,7 +45,7 @@ function DashBoard() {
               DashBoard
             </Typography>
           </Box>
-          <Box sx={{ mt: 2 }}>Have To Develop</Box>
+          <Box sx={{ mt: 2 }}>........</Box>
         </Box>
       </Box>
     </>

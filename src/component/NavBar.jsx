@@ -22,7 +22,7 @@ function NavBar() {
           <img src={logo} width={140}></img>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Typography sx={{ color: "Black" }}>
-              Miss : Sachini Gemba
+              Miss : Sachini Liyanage
             </Typography>
             <Avatar
               alt="Cindy Baker"

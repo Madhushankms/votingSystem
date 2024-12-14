@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Toolbar from "@mui/material/Toolbar";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
-import BImage from "../Img/bbb.jpg";
+import BImage from "../Img/vote2.jpg";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
@@ -113,86 +113,203 @@ function AdminReg() {
                   height: "100%",
                 }}
               >
-                <Box name="main">
-                  <Typography
-                    variant="subtitle2"
-                    gutterBottom
-                    mt={4}
-                    sx={{ display: "block" }}
+                <Box name="main" sx={{ display: "flex" }}>
+                  <Box name="left" sx={{ mr: 8 }}>
+                    <Typography
+                      variant="subtitle2"
+                      gutterBottom
+                      mt={4}
+                      sx={{ display: "block" }}
+                    >
+                      Personal Datails
+                    </Typography>
+                    <Divider sx={{ width: "20%", borderBottomWidth: 2 }} />
+                    <Grid container spacing={2} mt={1}>
+                      <Grid item sm={6}>
+                        <TextField
+                          fullWidth
+                          id="fname"
+                          sx={{ zIndex: 1 }}
+                          name="fname"
+                          label="First Name"
+                          size="small"
+                          value={formik.values.fname}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={
+                            formik.touched.fname && Boolean(formik.errors.fname)
+                          }
+                          helperText={
+                            formik.touched.fname && formik.errors.fname
+                          }
+                        />
+                      </Grid>
+                      <Grid item sm={6}>
+                        <TextField
+                          fullWidth
+                          id="lname"
+                          name="lname"
+                          sx={{ zIndex: 1 }}
+                          label="Last Name"
+                          size="small"
+                          value={formik.values.lname}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={
+                            formik.touched.lname && Boolean(formik.errors.lname)
+                          }
+                          helperText={
+                            formik.touched.lname && formik.errors.lname
+                          }
+                        />
+                      </Grid>
+                    </Grid>
+                    <Grid container spacing={2} mt={0}>
+                      <Grid item sm={6}>
+                        <TextField
+                          fullWidth
+                          id="add"
+                          sx={{ zIndex: 1 }}
+                          name="add"
+                          label="NIC"
+                          size="small"
+                          //placeholder="123/B, Uswewa, Abilipitiya."
+                          value={formik.values.add}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={
+                            formik.touched.add && Boolean(formik.errors.add)
+                          }
+                          helperText={formik.touched.add && formik.errors.add}
+                        />
+                      </Grid>
+                    </Grid>
+                    <Grid container spacing={2} mt={0}>
+                      <Grid item sm={6}>
+                        <TextField
+                          fullWidth
+                          id="bod"
+                          name="bod"
+                          sx={{ zIndex: 1 }}
+                          label="BirthDay"
+                          size="small"
+                          value={formik.values.bod}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={
+                            formik.touched.bod && Boolean(formik.errors.bod)
+                          }
+                          helperText={formik.touched.bod && formik.errors.bod}
+                        />
+                      </Grid>
+                    </Grid>
+                    <Grid container spacing={2} mt={0}>
+                      {/* <Grid item sm={6}>
+                        <TextField
+                          fullWidth
+                          id="email"
+                          sx={{ zIndex: 1 }}
+                          name="email"
+                          label="Email"
+                          size="small"
+                          value={formik.values.email}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={
+                            formik.touched.email && Boolean(formik.errors.email)
+                          }
+                          helperText={
+                            formik.touched.email && formik.errors.email
+                          }
+                        />
+                      </Grid> */}
+                    </Grid>
+                  </Box>
+
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+
+                      justifyContent: "space-between",
+                    }}
                   >
-                    Party Details
-                  </Typography>
-                  <Divider sx={{ width: "20%", borderBottomWidth: 2 }} />
-                  <Grid container spacing={2} mt={1}>
-                    <Grid item sm={3}>
-                      <TextField
-                        fullWidth
-                        id="fname"
-                        sx={{ zIndex: 1 }}
-                        name="fname"
-                        label="Name"
-                        size="small"
-                        value={formik.values.fname}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={
-                          formik.touched.fname && Boolean(formik.errors.fname)
-                        }
-                        helperText={formik.touched.fname && formik.errors.fname}
-                      />
-                    </Grid>
-                    <Grid item sm={3}>
-                      <TextField
-                        fullWidth
-                        id="lname"
-                        name="lname"
-                        sx={{ zIndex: 1 }}
-                        label="Place"
-                        size="small"
-                        value={formik.values.lname}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={
-                          formik.touched.lname && Boolean(formik.errors.lname)
-                        }
-                        helperText={formik.touched.lname && formik.errors.lname}
-                      />
-                    </Grid>
-                    <Grid item sm={3}>
-                      <TextField
-                        fullWidth
-                        id="lname"
-                        name="lname"
-                        sx={{ zIndex: 1 }}
-                        label="Date"
-                        size="small"
-                        value={formik.values.lname}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={
-                          formik.touched.lname && Boolean(formik.errors.lname)
-                        }
-                        helperText={formik.touched.lname && formik.errors.lname}
-                      />
-                    </Grid>
-                    <Grid item sm={2}>
-                      <TextField
-                        fullWidth
-                        id="lname"
-                        name="lname"
-                        sx={{ zIndex: 1 }}
-                        label="Status"
-                        size="small"
-                        value={formik.values.lname}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={
-                          formik.touched.lname && Boolean(formik.errors.lname)
-                        }
-                        helperText={formik.touched.lname && formik.errors.lname}
-                      />
-                    </Grid>
-                  </Grid>
+                    <Box>
+                      <Typography
+                        variant="subtitle2"
+                        gutterBottom
+                        mt={4}
+                        sx={{ display: "block" }}
+                      >
+                        Contact Details
+                      </Typography>
+                      <Divider sx={{ width: "20%", borderBottomWidth: 2 }} />
+                      <Grid container spacing={2} mt={1}>
+                        <Grid item sm={6}>
+                          <TextField
+                            fullWidth
+                            id="ename"
+                            name="ename"
+                            sx={{ zIndex: 1 }}
+                            label="Telephone number"
+                            size="small"
+                            value={formik.values.ename}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={
+                              formik.touched.ename &&
+                              Boolean(formik.errors.ename)
+                            }
+                            helperText={
+                              formik.touched.ename && formik.errors.ename
+                            }
+                          />
+                        </Grid>
+                        <Grid item sm={6}>
+                          <TextField
+                            fullWidth
+                            id="relation"
+                            name="relation"
+                            label="Email"
+                            size="small"
+                            value={formik.values.relation}
+                            onChange={formik.handleChange}
+                            sx={{ zIndex: 1 }}
+                            onBlur={formik.handleBlur}
+                            error={
+                              formik.touched.relation &&
+                              Boolean(formik.errors.relation)
+                            }
+                            helperText={
+                              formik.touched.relation && formik.errors.relation
+                            }
+                          />
+                        </Grid>
+                      </Grid>
+                      <Grid container spacing={2} mt={0}>
+                        <Grid item sm={6}>
+                          <TextField
+                            fullWidth
+                            id="enumber"
+                            name="enumber"
+                            sx={{ zIndex: 1 }}
+                            label="Address"
+                            size="large"
+                            value={formik.values.enumber}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={
+                              formik.touched.enumber &&
+                              Boolean(formik.errors.enumber)
+                            }
+                            helperText={
+                              formik.touched.enumber && formik.errors.enumber
+                            }
+                          />
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  </Box>
                 </Box>
                 <Box
                   sx={{

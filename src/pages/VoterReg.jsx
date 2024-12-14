@@ -92,7 +92,7 @@ function VoterReg() {
               bottom: 0,
               backgroundImage: `url(${BImage})`,
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "top",
               backgroundRepeat: "no-repeat",
               opacity: 0.09,
               zIndex: 1,
