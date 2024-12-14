@@ -19,6 +19,8 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import { useNavigate } from "react-router-dom";
+import ChecklistRtlIcon from "@mui/icons-material/ChecklistRtl";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 const drawerWidth = 240;
 export default function SideBar() {
   const navigate = useNavigate();
@@ -56,6 +58,7 @@ export default function SideBar() {
                 <ListItem disablePadding>
                   <ListItemButton
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                    onClick={() => navigate("/dashboard")}
                   >
                     <ListItemIcon>
                       <DashboardIcon />
@@ -67,7 +70,7 @@ export default function SideBar() {
                 <Divider />
                 <ListItem disablePadding>
                   <ListItemButton
-                    onClick={() => navigate("/NewMatch")}
+                    onClick={() => navigate("/newparty")}
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
                   >
                     <ListItemIcon>
@@ -79,7 +82,7 @@ export default function SideBar() {
                 </ListItem>
                 <ListItem disablePadding>
                   <ListItemButton
-                    onClick={() => navigate("/newstudent")}
+                    onClick={() => navigate("/newcandidate")}
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
                   >
                     <ListItemIcon>
@@ -89,10 +92,23 @@ export default function SideBar() {
                     <ListItemText />
                   </ListItemButton>
                 </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton
+                    onClick={() => navigate("/newvoter")}
+                    sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                  >
+                    <ListItemIcon>
+                      <AutoAwesomeIcon />
+                    </ListItemIcon>
+                    New Voter
+                    <ListItemText />
+                  </ListItemButton>
+                </ListItem>
 
                 <ListItem disablePadding>
                   <ListItemButton
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                    onClick={() => navigate("/adminreg")}
                   >
                     <ListItemIcon>
                       <AdminPanelSettingsIcon />
@@ -105,6 +121,7 @@ export default function SideBar() {
                 <ListItem disablePadding>
                   <ListItemButton
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                    onClick={() => navigate("/partylist")}
                   >
                     <ListItemIcon>
                       <ViewListIcon />
@@ -116,6 +133,7 @@ export default function SideBar() {
                 <ListItem disablePadding>
                   <ListItemButton
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                    onClick={() => navigate("/candidatelist")}
                   >
                     <ListItemIcon>
                       <FormatListNumberedIcon />
@@ -124,10 +142,23 @@ export default function SideBar() {
                     <ListItemText />
                   </ListItemButton>
                 </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton
+                    sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                    onClick={() => navigate("/voterlist")}
+                  >
+                    <ListItemIcon>
+                      <ChecklistRtlIcon />
+                    </ListItemIcon>
+                    Voter List
+                    <ListItemText />
+                  </ListItemButton>
+                </ListItem>
 
                 <ListItem disablePadding>
                   <ListItemButton
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                    onClick={() => navigate("/adminlist")}
                   >
                     <ListItemIcon>
                       <SupervisorAccountIcon />
@@ -143,6 +174,7 @@ export default function SideBar() {
                 <ListItem disablePadding>
                   <ListItemButton
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                    onClick={() => navigate("/profile")}
                   >
                     <ListItemIcon>
                       <AccountCircleIcon />
@@ -154,6 +186,7 @@ export default function SideBar() {
                 <ListItem disablePadding>
                   <ListItemButton
                     sx={{ py: 1.5, ":hover": { backgroundColor: "#78716c" } }}
+                    onClick={() => navigate("/")}
                   >
                     <ListItemIcon>
                       <LogoutIcon />

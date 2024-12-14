@@ -9,20 +9,23 @@ import Typography from "@mui/material/Typography";
 import NoEncryptionGmailerrorredIcon from "@mui/icons-material/NoEncryptionGmailerrorred";
 
 import { useFormik } from "formik";
+import { email, pass } from "../data/Data";
 import * as yup from "yup";
+import Notify from "../component/Notify";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = yup.object({
   email: yup
     .string("Enter your email")
     .email("Enter a valid email")
     .required("Email is required"),
-  password: yup
-    .string("Enter your password")
-    .min(8, "Password should be of minimum 8 characters length")
-    .required("Password is required"),
+  password: yup.string("Enter your password").required("Password is required"),
 });
 
 function Login() {
+  const navigate = useNavigate();
+  const [notifyOpen, setNotifyOpen] = React.useState(false);
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -30,9 +33,17 @@ function Login() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      if (values.email === email && values.password === pass) {
+        navigate("/dashboard");
+      } else {
+        setNotifyOpen(true);
+      }
     },
   });
+
+  const handleNotifyClose = () => {
+    setNotifyOpen(false);
+  };
   return (
     <>
       <Box
@@ -127,6 +138,13 @@ function Login() {
                   }
                   helperText={formik.touched.password && formik.errors.password}
                 />
+                {notifyOpen && (
+                  <Notify
+                    onClose={handleNotifyClose}
+                    type="error"
+                    contend="Invalid Credentials"
+                  />
+                )}
                 <Button
                   color="primary"
                   variant="contained"
